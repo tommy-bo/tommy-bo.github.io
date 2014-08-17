@@ -1,0 +1,112 @@
+html {
+		font-size: 25pt;
+		background-color: black;
+		vertical-align: central;
+}
+
+.impress-supported .fallback-message {
+		display: none;
+}
+
+/*.step {
+		position: relative;
+		width: 900px;
+		padding: 40px;
+		margin: 20px auto;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+		font-family: 'PT Serif', georgia, serif;
+		font-size: 48px;
+		line-height: 1.5;
+}*/
+
+.impress-enabled .step {
+		margin: 0;
+		opacity: 0.3;
+		-webkit-transition: opacity 1s;
+		-moz-transition: opacity 1s;
+		-ms-transition: opacity 1s;
+		-o-transition: opacity 1s;
+		transition: opacity 1s;
+}
+
+.slide, .motto-pic-1 {
+		display: block;
+		width: 36em;
+		height: 20em;
+		margin: 0.5em auto;
+		padding: 2em 3em;
+		background-color: white;
+		border: 1px solid rgba(0, 0, 0, .3);
+		border-radius: 1em;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+		color: rgb(102, 102, 102);
+		text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+		font-family: 'Open Sans', Arial, sans-serif;
+		background: url(vismalogo.png) no-repeat bottom right, white;
+		/*font-size: 30px;*/
+		/*line-height: 36px;*/
+		/*letter-spacing: -1px;*/
+}
+
+.motto-pic-1 {
+		padding: 0;
+		width: 42em;
+		height: 24em;
+		background: url(motto-pic-1.jpg) no-repeat center;
+		/*background-size: 100%;*/
+		-webkit-background-size: 105%;
+		/*height: 100%;*/
+		/*width: 100%;*/
+		position: relative;
+}
+
+.motto-pic-1:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 1em;
+		bottom: 1em;
+		opacity: 0.6;
+		background: url(vismalogo.png) no-repeat bottom right;
+}
+
+.content {
+		margin: auto;
+}
+
+
+.impress-enabled .step.active { 
+		opacity: 1 
+}
+
+
+/*.slide {
+}
+
+.slide>.content{
+		margin: auto;
+}*/
+/*
+.active {
+}*/
+/*
+.active + div + div {
+		opacity: 0.1;
+		transition: opacity 1s;
+}*/
+/*
+.wall {
+		background-color: none;
+		transition: background-color 1s;
+}
+
+.wall.active {
+		background-color: white;
+		transition: background-color 1s;
+}*/

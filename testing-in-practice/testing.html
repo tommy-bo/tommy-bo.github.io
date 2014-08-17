@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+				<meta charset="utf-8" />
+				<meta name="viewport" content="width=1024" />
+				<meta name="description" content="Denne presentasjonen reflekterer over behovene for testing og går i praktiske detaljer på hvordan man bør teste." />
+				<meta name="author" content="Tommy Bø" />
+				<link href="testing.css" rel="stylesheet" type="text/css"/>
+				<link rel="shortcut icon" href="favicon.ico" />
+				<title>Testing</title>
+		</head>
+
+		<body class="impress-not-supported">
+
+				<div id="impress">
+
+						<div class="step">
+								<div class="slide">
+										<div class="content">
+												<h1>Visma consulting</h1>
+												<h2>Testing</h2>
+												<h3>in practice</h3>
+										</div>
+								</div>
+						</div>
+
+						<div class="step" data-x="2000">
+								<div class="slide">
+										Introduksjons-slide: Litt om visma
+								</div>
+						</div>
+
+						<div class="step" data-x="4000">
+								<div class="slide">
+										Hvorfor teste?
+								</div>
+						</div>
+						<div class="step" data-x="4000" data-rotate-x="90">
+								<div class="slide">
+										<ul>
+												<li>Verifisere funksjonalitet</li>
+												<li>Tidlig feedback</li>
+												<li>Hindre endringer som bryter forventet oppførsel</li>
+												<li>Fjerne frykt for å endre kode</li>
+										</ul>
+								</div>
+						</div>
+
+						<div class="step" data-x="14000" data-y="5000" data-rotate-x="90" data-rotate-y="90" data-scale="10">
+								<div class="slide">
+										Det er vanlig med to forskjellige måter å teste på, med mange variasjoner innenfor disse testtypene
+								</div>
+						</div>
+						<div class="step" data-x="14000" data-y="5000" data-z="15000" data-rotate-x="90" data-rotate-y="90" data-scale="10">
+								<div class="slide">
+										Enhetstest:<br>
+										<ul>
+												<li>
+														Testing av logiske enheter: <br>
+														Dette er tester på laveste nivå som tester enkle metoder, klasser eller små sett med klasser.
+														Disse testene tar som regel minimalt med tid å kjøre og man kan teste enorme mengder i løpet av veldig kort tid.
+												</li>
+												<li>
+														Integrasjonstester (Databasetester): <br>
+														Selv om integrasjonstester egentlig beskriver alle tester som er hvhengig av eksterne komponenter,
+														er det som regel tester som tester integrasjon mot database eller andre lagringsmedier som får denne betegnelsen.
+														Disse testene tar lenger tid å kjøre og man har som regel behov for en del oppsett før man kan kjøre dem.
+														Disse testene krever også at databasen eller tilsvarende er tilgjengelig ved kjøring.
+												</li>
+												<li>
+														Komponenttester: <br>
+														I komponenttester tester man som regel samhandlig mellom egen kode og komponenter/rammeverk man benytter.
+														Disse testene krever som regel et minimalt oppsett for rammeverket før man kan kjøre testene og det vil
+														variere hvor lang tid disse testene tar.
+												</li>
+										</ul>
+								</div>
+						</div>
+						<div class="step" data-x="13999" data-y="5000" data-z="15000" data-rotate-x="90" data-rotate-y="270" data-scale="10">
+								<div class="slide">
+										Systemtest:<br>
+										<ul>
+												<li>
+														Testing av logiske enheter: <br>
+														Dette er tester på laveste nivå som tester enkle metoder, klasser eller små sett med klasser.
+														Disse testene tar som regel minimalt med tid å kjøre og man kan teste enorme mengder i løpet av veldig kort tid.
+												</li>
+												<li>
+														Integrasjonstester (Databasetester): <br>
+														Selv om integrasjonstester egentlig beskriver alle tester som er hvhengig av eksterne komponenter,
+														er det som regel tester som tester integrasjon mot database eller andre lagringsmedier som får denne betegnelsen.
+														Disse testene tar lenger tid å kjøre og man har som regel behov for en del oppsett før man kan kjøre dem.
+														Disse testene krever også at databasen eller tilsvarende er tilgjengelig ved kjøring.
+												</li>
+												<li>
+														Komponenttester: <br>
+														I komponenttester tester man som regel samhandlig mellom egen kode og komponenter/rammeverk man benytter.
+														Disse testene krever som regel et minimalt oppsett for rammeverket før man kan kjøre testene og det vil
+														variere hvor lang tid disse testene tar.
+												</li>
+										</ul>
+								</div>
+						</div>
+						<div class="step" data-x="13999" data-y="5000" data-rotate-x="90" data-rotate-y="270" data-scale="10">
+								<div class="slide">
+										<img src="testfordelingstriangel.png" alt="figur som viser hvordan man bør fokusere tester"/>
+								</div>
+						</div>
+						<div class="step" data-x="-5000" data-y="5000" data-rotate-x="90" data-rotate-y="90">
+								<div class="slide">
+										???
+								</div>
+						</div>
+						<div class="step" data-rotate-x="0" data-rotate-y="90" data-rotate-z="90">
+								<div class="slide">
+										Oppsummering
+								</div>
+						</div>
+						<div class="step" data-rotate-x="270" data-rotate-y="180" data-rotate-z="270">
+								<div class="slide motto-pic-1">
+<!--										<img class="motto-pic-1" src="motto-pic-1.jpg" alt="Motto: Respect, Reliability, Innovation, Competence, Team spirit" height="20" width="36"/>-->
+										<!--<div class="motto-pic-1"></div>-->
+								</div>
+						</div>
+				</div>
+
+
+				<script src="impress.js"></script>
+				<script>impress().init();</script>				
+		</body>
+</html>
