@@ -16,27 +16,36 @@
 
 						<div class="step">
 								<div class="slide">
-										<div class="content">
-												<h1>Visma consulting</h1>
-												<h2>Testing</h2>
-												<h3>in practice</h3>
+										<div class="title">
+												<h1>Testing (IRL)</h1>
+												<h3>Et innblikk i hvordan testing praktiseres i moderne prosjekt</h2>
+														<h4>Et foredrag av Tommy Bø</h4>
 										</div>
 								</div>
 						</div>
 
-						<div class="step" data-x="2000">
+						<div class="step">
 								<div class="slide">
 										Introduksjons-slide: Litt om visma
 								</div>
 						</div>
-
-						<div class="step" data-x="4000">
+						<div class="step">
 								<div class="slide">
-										Hvorfor teste?
+										<h2>Litt tørre fakta om meg</h2>
+										<ul>
+												<li>Utdannet ved dph/NITH</li>
+												<li>10 års erfaring innen systemutvikling</li>
+												<li>Har jobbet i Visma Consulting siden 2008</li>
+												<li>Fortid i Politiets Datakrimsenter og Finn.no</li>
+												<li>Har hatt oppdrag for Statens Landbruksforvaltning, Wilhelmsen, NAV og Skatteetaten</li>
+												<li>Fagmanager for faggruppen Software Craftsmanship</li>
+										</ul>
 								</div>
 						</div>
-						<div class="step" data-x="4000" data-rotate-x="90">
+
+						<div class="step">
 								<div class="slide">
+										<h2>Hvorfor teste?</h2>
 										<ul>
 												<li>Verifisere funksjonalitet</li>
 												<li>Tidlig feedback</li>
@@ -46,14 +55,31 @@
 								</div>
 						</div>
 
-						<div class="step" data-x="14000" data-y="5000" data-rotate-x="90" data-rotate-y="90" data-scale="10">
+						<div class="step">
 								<div class="slide">
-										Det er vanlig med to forskjellige måter å teste på, med mange variasjoner innenfor disse testtypene
+										<h2>Variasjon av testing</h2>
+										<ul>
+												<li>
+														Mange måter å teste på<br>
+														Blackbox, whitebox, automatisert, manuelt,
+														enhetstesting, systemtesting, ytelsestesting osv
+												</li>
+												<li>
+														Mange verktøy<br>
+														JUnit, TestNG, Mockito, Cucumber, Fitnesse, Hamcrest, 
+														AssertJ (Fest Assert), Pitest, Jacoco, Maven, Jenkins
+												</li>
+												<li>
+														Lett å miste oversikt<br>
+														Viktig å standardisere hvilke verktøy som brukes og
+														hvordan testene skal struktureres.
+												</li>
+										</ul>
 								</div>
 						</div>
-						<div class="step" data-x="14000" data-y="5000" data-z="15000" data-rotate-x="90" data-rotate-y="90" data-scale="10">
+						<div class="step">
 								<div class="slide">
-										Enhetstest:<br>
+										<h2>Enhetstest:</h2>
 										<ul>
 												<li>
 														Testing av logiske enheter: <br>
@@ -62,70 +88,152 @@
 												</li>
 												<li>
 														Integrasjonstester (Databasetester): <br>
-														Selv om integrasjonstester egentlig beskriver alle tester som er hvhengig av eksterne komponenter,
-														er det som regel tester som tester integrasjon mot database eller andre lagringsmedier som får denne betegnelsen.
-														Disse testene tar lenger tid å kjøre og man har som regel behov for en del oppsett før man kan kjøre dem.
-														Disse testene krever også at databasen eller tilsvarende er tilgjengelig ved kjøring.
+														Tester integrasjonmot eksterne komponenter, da som regel databaser eller andre lagringsmedier.
+														Disse testene tar lengre tid å kjøre og man har som regel behov for en del oppsett før man kan kjøre dem.
+														Det er også et krav å ha databasen tilgjengelig ved kjøring.
 												</li>
 												<li>
 														Komponenttester: <br>
 														I komponenttester tester man som regel samhandlig mellom egen kode og komponenter/rammeverk man benytter.
-														Disse testene krever som regel et minimalt oppsett for rammeverket før man kan kjøre testene og det vil
+														Disse testene krever et minimalt oppsett for rammeverket før man kan kjøre testene og det vil
 														variere hvor lang tid disse testene tar.
 												</li>
 										</ul>
 								</div>
 						</div>
-						<div class="step" data-x="13999" data-y="5000" data-z="15000" data-rotate-x="90" data-rotate-y="270" data-scale="10">
+						<div class="step">
 								<div class="slide">
-										Systemtest:<br>
+										<h2>Systemtest:</h2>
 										<ul>
 												<li>
-														Testing av logiske enheter: <br>
-														Dette er tester på laveste nivå som tester enkle metoder, klasser eller små sett med klasser.
-														Disse testene tar som regel minimalt med tid å kjøre og man kan teste enorme mengder i løpet av veldig kort tid.
+														Testing av system i reelt miljø: <br>
+														Dette er tester som kjører mot et system etter at det er pakket og tilgjengeliggjort i et miljø.
+														Testene vil som regel integrere mot systemet via forskjellige nettverksprotokoller som http pg rmi.
+														Systemtestene er blackbox-tester som kaller utfører en operasjon og validerer output fra denne.
 												</li>
 												<li>
-														Integrasjonstester (Databasetester): <br>
-														Selv om integrasjonstester egentlig beskriver alle tester som er hvhengig av eksterne komponenter,
-														er det som regel tester som tester integrasjon mot database eller andre lagringsmedier som får denne betegnelsen.
-														Disse testene tar lenger tid å kjøre og man har som regel behov for en del oppsett før man kan kjøre dem.
-														Disse testene krever også at databasen eller tilsvarende er tilgjengelig ved kjøring.
+														Systemintegrasjonstester: <br>
+														Disse testene er like som systemtester, men krever også at tilstøtende systemer er tilgjengelige.
 												</li>
 												<li>
-														Komponenttester: <br>
-														I komponenttester tester man som regel samhandlig mellom egen kode og komponenter/rammeverk man benytter.
-														Disse testene krever som regel et minimalt oppsett for rammeverket før man kan kjøre testene og det vil
-														variere hvor lang tid disse testene tar.
+														Ytelsestester: <br>
+														Dette er tester som tester ytelsen i systemet. Testene kan være av alle typer, men det er vanlig at
+														hovedvekten er tester som setter systemet under høy last.
 												</li>
 										</ul>
 								</div>
 						</div>
-						<div class="step" data-x="13999" data-y="5000" data-rotate-x="90" data-rotate-y="270" data-scale="10">
+						<div class="step">
 								<div class="slide">
-										<img src="testfordelingstriangel.png" alt="figur som viser hvordan man bør fokusere tester"/>
+										<h2>Testfordeling</h2>
+										<img src="testfordelingstriangel.png" alt="figur som viser hvordan man bør fokusere tester" style="margin-top: -2em;"/>
 								</div>
 						</div>
-						<div class="step" data-x="-5000" data-y="5000" data-rotate-x="90" data-rotate-y="90">
+						<div class="step">
 								<div class="slide">
-										???
+										<h2>Design for test</h2>
+										<ul>
+												<li>
+														Designpatterns: Strategier man kan følge som vil gi
+														effektiv og vedlikeholdbar programvare. De aller fleste
+														av disse strategiene vil også føre til at kodebasen blir
+														enklere å teste. Høy sammenheng/Lav kobling, Builders,
+														Factory, Proxy og Observer er eksempler på patterns som 
+														vil gi gode forutsetninger for å teste kode i isolasjon.
+												</li>
+												<li>
+														Test-first: Ved å skrive testene før man skriver koden vil man bygge
+														koden ut fra tiltenkt bruk i stedet for å bruke tid på
+														synsing. Man vil også igjennom denne metoden bygge koden
+														testbar fra starten.
+												</li>
+												<li>
+														Separation of concerns: Dette er egentlig mye av det 
+														samme som Høy sammenheng/Lav kobling.
+														Ved å eksternalisere kode til egne klasser blir selv de mest bortgjemte
+														funksjonene enkle å teste. Spesielt algoritmer som har mange utfall
+														kan være greie å trekke ut.
+												</li>
+										</ul>
 								</div>
 						</div>
-						<div class="step" data-rotate-x="0" data-rotate-y="90" data-rotate-z="90">
+						<div class="step">
 								<div class="slide">
-										Oppsummering
+										<h2>Test-driven Development</h2>
+										<h1>TODO</h1>
 								</div>
 						</div>
-						<div class="step" data-rotate-x="270" data-rotate-y="180" data-rotate-z="270">
+						<div class="step">
+								<div class="slide">
+										<h2>Teknikker for å begrense scope for testing</h2>
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										<h2>Bruk utviklingsverktøyet</h2>
+										IntelliJ: Veldig bra<br>
+										Eclipse: Ikke like bra<br>
+										NetBeans: Outsider, men min favoritt<br><br>
+										Lær snarveiene i editoren (skriv ut shortcut-kort):
+										<ul>
+												<li>Navigere mellom klasser</li>
+												<li>Åpne klasse</li>
+												<li>Kjør test</li>
+												<li>Trekk ut metode</li>
+												<li>Trekk ut konstant</li>
+												<li>Trekk ut variabel</li>
+												<li>Flytt linje</li>
+												<li>Andre refaktoreringer</li>
+										</ul>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										Mocks<br>
+										Stubs<br>
+										Fake<br>
+										<a href="http://martinfowler.com/articles/mocksArentStubs.html" target="_blank">
+												http://martinfowler.com/articles/mocksArentStubs.html
+										</a>
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										Om måling av testdekning og bruk av jacoco.
+										Testdekning viser hvor stor del av koden som blir kjørt under testing.
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										Testing av legacy code
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										Reprodusering av bugs
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										Oppsummering?
+										<h1>TODO</h1>
+								</div>
+						</div>
+						<div class="step">
 								<div class="slide motto-pic-1">
-<!--										<img class="motto-pic-1" src="motto-pic-1.jpg" alt="Motto: Respect, Reliability, Innovation, Competence, Team spirit" height="20" width="36"/>-->
-										<!--<div class="motto-pic-1"></div>-->
 								</div>
 						</div>
 				</div>
 
 
 				<script src="impress.js"></script>
-				<script>impress().init();</script>				
+				<script src="impress-slide-setup.js"></script>
+				<script src="slide-setup.js"></script>
+				<script></script>				
 		</body>
 </html>

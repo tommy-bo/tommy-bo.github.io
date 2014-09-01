@@ -4,33 +4,33 @@ html {
 		vertical-align: central;
 }
 
+h3 {
+		color: rgb(132, 132, 152);
+		margin-bottom: 0.3em;
+}
+
+h4 {
+		color: rgb(132, 132, 152);
+		font-size: 18pt;
+		margin-top: 0;
+}
+
 .impress-supported .fallback-message {
 		display: none;
 }
 
-/*.step {
-		position: relative;
-		width: 900px;
-		padding: 40px;
-		margin: 20px auto;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		box-sizing: border-box;
-		font-family: 'PT Serif', georgia, serif;
-		font-size: 48px;
-		line-height: 1.5;
-}*/
-
 .impress-enabled .step {
 		margin: 0;
-		opacity: 0.3;
-		-webkit-transition: opacity 1s;
+		opacity: 0;
 		-moz-transition: opacity 1s;
 		-ms-transition: opacity 1s;
 		-o-transition: opacity 1s;
 		transition: opacity 1s;
+}
+
+.slide>.title {
+		margin-left: 5em;
+		margin-top: 9em;
 }
 
 .slide, .motto-pic-1 {
@@ -47,9 +47,16 @@ html {
 		text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 		font-family: 'Open Sans', Arial, sans-serif;
 		background: url(vismalogo.png) no-repeat bottom right, white;
-		/*font-size: 30px;*/
-		/*line-height: 36px;*/
-		/*letter-spacing: -1px;*/
+		overflow: hidden;
+}
+
+.slide>img {
+		margin: auto;
+		display: block;
+}
+
+.impress-enabled .step.active { 
+		opacity: 1;
 }
 
 .motto-pic-1 {
@@ -57,10 +64,8 @@ html {
 		width: 42em;
 		height: 24em;
 		background: url(motto-pic-1.jpg) no-repeat center;
-		/*background-size: 100%;*/
-		-webkit-background-size: 105%;
-		/*height: 100%;*/
-		/*width: 100%;*/
+		-webkit-background-size: 103%;
+		background-size: 103%;
 		position: relative;
 }
 
@@ -75,16 +80,6 @@ html {
 		opacity: 0.6;
 		background: url(vismalogo.png) no-repeat bottom right;
 }
-
-.content {
-		margin: auto;
-}
-
-
-.impress-enabled .step.active { 
-		opacity: 1 
-}
-
 
 /*.slide {
 }
