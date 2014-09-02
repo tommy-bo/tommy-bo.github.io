@@ -18,17 +18,12 @@
 								<div class="slide">
 										<div class="title">
 												<h1>Testing (IRL)</h1>
-												<h3>Et innblikk i hvordan testing praktiseres i moderne prosjekt</h2>
-														<h4>Et foredrag av Tommy Bø</h4>
+												<h3>Et innblikk i hvordan testing praktiseres i moderne prosjekt</h3>
+												<h4>Et foredrag av Tommy Bø</h4>
 										</div>
 								</div>
 						</div>
 
-						<div class="step">
-								<div class="slide">
-										Introduksjons-slide: Litt om visma
-								</div>
-						</div>
 						<div class="step">
 								<div class="slide">
 										<h2>Litt tørre fakta om meg</h2>
@@ -160,13 +155,29 @@
 						<div class="step">
 								<div class="slide">
 										<h2>Test-driven Development</h2>
-										<h1>TODO</h1>
+										I TDD har man fokus på å aktivt bruke testene for å forme koden.
+										Testbar kode henger tett sammen med vedlikeholdbar og endringsvillig
+										kode. I tillegg til at man har fokus på testing ønsker man også å
+										stimulere til kompetansedeling og samarbeid via parprogrammering.
+										Det er fortsatt mange som tenker at man får gjort mer dersom to utviklere
+										jobber på separate oppgaver, men min erfaring tilsier det motsatte.
+										Utfordringer som kommer frem underveis blir fortere løst igjennom
+										drøfting, og man får et mer stimulerende arbeidsmiljø. Man bidrar
+										til å trekke hverandre opp kompetansemessig og over tid vil man
+										oppleve at man får en enhetlig kode hvor gode id&#233;er og gode
+										konvensjoner blir videreført.
 								</div>
 						</div>
 						<div class="step">
 								<div class="slide">
 										<h2>Teknikker for å begrense scope for testing</h2>
-										<h1>TODO</h1>
+										<ul>
+												<li>Trekk ut kode i egne klasser. Små enhetlige klasser er lette å teste</li>
+												<li>Bruk tester til å avdekke kompleksitet. </li>
+												<li>Eliminer så mye kompleksitet som mulig</li>
+												<li>Bruk testerstatninger dersom det er vanskelig å teste kode</li>
+												<li>Unngå verifisering inn i nøstede objekt ved bruk av mocks.</li>
+										</ul>
 								</div>
 						</div>
 						<div class="step">
@@ -190,32 +201,120 @@
 						</div>
 						<div class="step">
 								<div class="slide">
-										Mocks<br>
-										Stubs<br>
-										Fake<br>
+										<h2>Testerstatninger</h2>
+										<ul>
+												<li>
+														Mocks brukes for å begrense handlingsforløpet i en test.
+														Ved mocking bruker man forhåndskonfigurerte returverdier og på den måten
+														kan ha et kontrollert utfall av testen. Man kan legge opp til å verifisere
+														at spesifikke metoder er kjørt, men dette bør begrenses til det minimale da
+														det gjør refaktorering vanskeligere.
+												</li>
+												<li>
+														Stubs er et minimalt implementert objekt som har predefinerte returverdier,
+														eller som sporer hvilke operasjoner som er utført.
+												</li>
+												<li>
+														Fakes er fungerende objekter som replikerer de objektene som vil brukes
+														under normal kjøring, men som ikke (nødvendigvis) utfører de oppgavene
+														disse objektene har. Ofte brukes fakes til å redusere avhengigheter til
+														databaser, eksterne tjenester osv.
+												</li>
+										</ul>
 										<a href="http://martinfowler.com/articles/mocksArentStubs.html" target="_blank">
 												http://martinfowler.com/articles/mocksArentStubs.html
 										</a>
-										<h1>TODO</h1>
 								</div>
 						</div>
 						<div class="step">
 								<div class="slide">
-										Om måling av testdekning og bruk av jacoco.
-										Testdekning viser hvor stor del av koden som blir kjørt under testing.
-										<h1>TODO</h1>
+										<h2>Testdekning</h2>
+										<p>
+												Testdekning er et begrep som brukes når man beskriver hvor mye av koden
+												som blir kjørt under testing. Dekningsgraden gir en indikasjon på
+												hvor godt testet koden er, og hvor komfortabel man kan være med å endre
+												koden. JaCoCo er det vektøyet som er mest utbredt ved kjøring på java7+,
+												mens man tidligere benyttet cobertura eller emma.
+										</p>
+										<p>
+												Testrapporter som genereres vil gi god oversikt over hvilke deler av systemet
+												som trenger fokus og hvilke deler som er dekket. Man kan også konfigurere IDE-en
+												til å måle og vise testdekning direkte i kildekoden.
+										</p>
 								</div>
 						</div>
 						<div class="step">
 								<div class="slide">
-										Testing av legacy code
-										<h1>TODO</h1>
+										<h2>Mutasjonstesting</h2>
+										<p>
+												Testdekning er som nevnt en indikasjon på hvor godt koden er testet,
+												men vi har ingen garantier for at testene validerer returverdier og
+												verifiserer forventet oppførsel. Ved mutasjonstesting vil man bedre
+												kunne måle hvor stor del av koden som faktisk blir verifisert av testene.
+										</p>
+										<p>
+												Ved mutasjonstesting bruker man et rammeverk som manipulerer objektene vi har
+												i kodebasen. Hvert statement blir forsøkt manipulert og etter hver manipulering
+												vil alle testene kjøre. Dersom noen av testene feiler vil mutasjon bli eliminert,
+												men dersom ingen av testene feiler har mutasjonen overlevd. Mutasjonene utføres 
+												sekvensielt, og flere mutasjoner kan gjennomføres for hvert statement. Det innebærer
+												at kjøring mot en stor kodebase kan ta lang tid, men hvis man ser at mutasjonsdekning
+												og testdekning følger hverandre kan man bruke testdekningen som veiledning.
+										</p>
 								</div>
 						</div>
 						<div class="step">
 								<div class="slide">
-										Reprodusering av bugs
-										<h1>TODO</h1>
+										<h2>Testing av legacy code</h2>
+										<p>
+												Som utvikler vil man noen ganger jobbe med gammel kode. Gammel kode
+												blir referert til som legacy code (arvet kode). Gamle systemer ble 
+												gjerne utviklet i en tid hvor testing ikke ble utført på samme måte
+												som i dag. Det var lite fokus på automatisert testing og kodebasen
+												bærer preg av dette.
+										</p>
+										<p>
+												I en slik kodebase er det viktig å gjøre grep
+												for å få koden mer testbar. Det innebærer at når man skal endre
+												funksjonalitet skriver man tester på den eksisterende koden før man
+												gjør endringer. Deretter kan man refaktorere koden etter behov slik at
+												den blir enklere å jobbe med og samtidig mer testbar. Utfør så de ønskede
+												funksjonelle endringene. Ved en slik arbeidsprosess vil man over tid fornye
+												kodebasen og gjennomføre modernisering igjennom vanlig vedlikehold.
+										</p>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										<h2>Reprodusering av bugs</h2>
+										<p>
+												Selv hvor iherdig man tester et system vil det alltid dukke opp bugs.
+												Det man bør gjøre da er å skrive en test som reproduserer bugen før
+												man retter den slik at man ikke risikerer å innføre den på nytt.
+												Det er få ting som gir et så stort inntrykk av uproffesjonalitet
+												og udugelighet som når man opplever at samme feil oppstår gang på gang.
+										</p>
+								</div>
+						</div>
+						<div class="step">
+								<div class="slide">
+										<h2>Spesification by example</h2>
+										<p>
+												TDD og testing generelt har blitt veldig utbredt og mange har
+												begynt å strekke seg lenger i hvordan man gjennomfører automatisert
+												testing. En av disse veiene er Spesification by example. Denne
+												arbeidsmetoden baserer seg på at løsningsarkitekter og annet
+												personell som er med på å spesifisere løsningen gjør dette
+												igjennom et spesifikasjonsspråk som heter Gherkin. Dette språket
+												blir tolket direkte igjennom verktøy som Cucumber og gjennomført
+												som en egen test. På denne måten blir løsningsspesifikasjonen direkte
+												testbar og avvik mellom løsningskrav og implementasjon blir minimal.
+										</p>
+										<p style="font-style: italic;">
+												Gitt et brev adressert til Hanne Hansen, Gateveien 1, 0177 OSLO<br>
+												Når brevet kommer inn til fordelingssentralen<br>
+												Så skal brevet distribueres til Bakkeby postkontor.<br>
+										</p>
 								</div>
 						</div>
 						<div class="step">
@@ -234,6 +333,5 @@
 				<script src="impress.js"></script>
 				<script src="impress-slide-setup.js"></script>
 				<script src="slide-setup.js"></script>
-				<script></script>				
 		</body>
 </html>

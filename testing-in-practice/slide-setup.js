@@ -43,14 +43,21 @@ var applyLayout = function(setup) {
 						.rotateX(-90)
 				.next()
 						.rotateY(-90)
+				.next()
+						.rotateZ(90)
+						.rotateY(-90)
+						.moveX(2000)
+						.moveY(-500)
+						.moveZ(-1000)
 		
 		
 				.next()
 						.clear()
+						.rotateY(-90)
 						.rotateZ(90)
 				.next()
 						.rotateX(270)
-						.rotateY(90)
+						.rotateY(180)
 						.rotateZ(180)
 				.apply();
 };
