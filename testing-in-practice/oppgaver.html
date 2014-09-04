@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="description" content="Denne presentasjonen reflekterer over behovene for testing og går i praktiske detaljer på hvordan man bør teste." />
+		<meta name="author" content="Tommy Bø" />
+		<link href="testing.css" rel="stylesheet" type="text/css"/>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<title>Oppgaver</title>
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div id="impress">
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgaver</h2>
+					<p>
+						Oppgavene skal løses igjennom parprogrammering og TDD. Den ene skriver tester
+						og den andre implementerer funksjonaliteten.<br>
+						Bytt på rollene mellom hver oppgave.
+					</p>
+					<p>
+						Dataene som er lagret til databasen ligger i filen (database/)src/test/resources/post_kontor.dbunit.xml.
+						Denne kan man endre på ved behov.
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgave 1</h2>
+					<p>
+						Sjekk ut testprosjektet som ligger på git:
+						<a href="https://github.com/tommy-bo/westerdals.git">https://github.com/tommy-bo/westerdals.git</a><br>
+						Importer det inn i din IDE og sjekk at prosjektet bygger.
+					</p>
+					<p>
+						Åpne klassen com.github.tommybo.westerdals.database.DatabaseSetupIT som ligger under database-modulen, og endre konstanten
+						FINN_POSTKONTOR_I_DATABASEN fra "Tøyen" til "Sinsen" og verifiser at testene feiler. Bytt deretter tilbake til "Tøyen"
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgave 2</h2>
+					<p>
+						Opprett en klasse PostKontorDbRepository som implementerer PostKontorRepository. Fokuser på metoden hentAllePostkontor.
+						Den andre metoden kan implementeres med følgende kode
+					</p>
+					<pre>throw new UnsupportedOperationException("Not supported yet.");</pre>
+					<p>
+						Skriv tester som verifiserer at alle postkontorene hentes ut.<br>
+						For å mappe fra en rad i et resultset til et postkontorobjekt kan klassen PostkontorMapper benyttes.
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgave 3</h2>
+					<p>
+						Skriv tester som skal verifisere metoden hentPostkontorForPostnummer(String postnummer).
+						Test to grensetilfeller, f.eks. uthenting for postnumrene 1102 og 1001.
+						Test også at man får en tom verdi ved et postnummer som ikke har tilknyttet postkontor.
+					</p>
+					<p>
+						Returverdien i metoden er en Optional. Dette er en markør for at man kan få null-verdier tilbake. Optional har
+						en metode som heter isPresent som man kan sjekke mot.<br>
+						Implementer nødvendig funksjonalitet til at testene er ok.
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgave 4</h2>
+					<p>
+						Det skal opprettes et nytt felt i post_kontor som heter region.
+						Repository-interfacet skal også ha en metode som henter alle kontor i en region.<br>
+						Database-script ligger her: (database/)src/main/resources/createTables.sql)<br>
+						Skriv test og implementer funksjonalitet.
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide">
+					<h2>Oppgave 5</h2>
+					<p>
+						Med nærmere ettersyn viser det seg at PostkontorMapper er for dårlig testet.
+						Lag en test for mapperen, og bruk en mock som erstatning for resultset.
+					</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="slide motto-pic-1">
+				</div>
+			</div>
+		</div>
+
+
+		<script src="impress.js"></script>
+		<script src="impress-slide-setup.js"></script>
+		<script src="oppgaver-slide-setup.js"></script>
+	</body>
+</html>
