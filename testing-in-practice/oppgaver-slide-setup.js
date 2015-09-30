@@ -14,6 +14,8 @@ var applyLayout = function(setup) {
 						.moveY(1000)
 				.next()
 						.moveY(1000)
+				.next()
+						.moveY(1000)
 				.apply();
 };
 
